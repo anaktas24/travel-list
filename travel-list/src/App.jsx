@@ -59,7 +59,7 @@ function Item({item}){
   )
 }
 function Stats(){
-  return <footer> You have X items on your list. You packed already packed X items</footer>
+  return <footer className='footer'> You have X items on your list. You packed already packed X items</footer>
 }
 
 
