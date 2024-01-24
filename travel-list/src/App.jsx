@@ -38,7 +38,7 @@ function Form(){
 }
 function List(){
   return (
-    <div>
+    <div className='container'>
       <ul>
         {initialItems.map((item) => (
           <Item item={item} key={item.id} />
