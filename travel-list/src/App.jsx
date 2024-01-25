@@ -50,7 +50,7 @@ function Form(){
 }
 function List(){
   return (
-    <div className='container'>
+    <div className='list'>
       <ul>
         {initialItems.map((item) => (
           <Item item={item} key={item.id} />
@@ -71,7 +71,7 @@ function Item({item}){
   )
 }
 function Stats(){
-  return <footer className='footer'> You have X items on your list. You packed already packed X items</footer>
+  return <footer className='stats'> You have X items on your list. You packed already packed X items</footer>
 }
 
 
