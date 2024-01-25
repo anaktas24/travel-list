@@ -1,4 +1,5 @@
 import './App.css'
+import {useState} from 'react'
 
 const initialItems = [
   { id:1, description: "Pass", quantity:2, packed: false}]
@@ -19,6 +20,8 @@ function Logo(){
   return <h1> Far Away</h1>
 }
 function Form(){
+  const [description,setDescription] = useState("")
+
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -31,7 +34,7 @@ function Form(){
             {num}
           </option>)}
       </select>
-      <input type="text" placeholder="Item..."/>
+      <input type="text" placeholder="Item..." value={description} onChange={(e)=> setDescription(e.target.value)}/>
       <button>Add</button>
     </form>
   )
