@@ -14,15 +14,19 @@ function App() {
     setItems(items=>[...items, item])
   }
 
+  function handleDeleteItem(id){
+    setItems((items)=> items.filter((item=>item.id!==id)))
+  }
 
-return (
-  <div className='app'>
-    <Logo/>
-    <Form onAddItems={handleAddItems}/>
-    <List items={items}/>
-    <Stats/>
-  </div>
-)
+
+  return (
+    <div className='app'>
+      <Logo/>
+      <Form onAddItems={handleAddItems}/>
+      <List items={items} onDeleteItem={handleDeleteItem}/>
+      <Stats/>
+    </div>
+  )
 }
 
 function Logo(){
@@ -71,24 +75,24 @@ function Form({onAddItems}){
     </form>
   );
 }
-function List({items}){
+function List({items, onDeleteItem}){
   return (
     <div className='list'>
       <ul>
         {items.map((item) => (
-          <Item item={item} key={item.id} />
+          <Item item={item} onDeleteItem={onDeleteItem} key={item.id} />
         ))}
       </ul>
     </div>
   )
 }
 
-function Item({item}){
+function Item({item, onDeleteItem}){
   return(
     <li>
       <span style={item.packed ? { textDecoration:"line-trough"} : {}}>
         {item.quantity} {item.description}
-        <button>X</button>
+        <button onClick={()=> onDeleteItem(item.id)}>X</button>
       </span>
     </li>
   )
