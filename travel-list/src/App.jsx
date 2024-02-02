@@ -31,7 +31,7 @@ function App() {
       <Logo/>
       <Form onAddItems={handleAddItems}/>
       <List items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem}/>
-      <Stats/>
+      <Stats items={items}/>
     </div>
   )
 }
@@ -105,7 +105,9 @@ function Item({item, onDeleteItem, onToggleItem}){
     </li>
   )
 }
-function Stats(){
+function Stats({items}){
+  const numItems = items.length
+  const numPacked = items.filter(item=> item.packed).length
   return <footer className='stats'> You have X items on your list. You packed already packed X items</footer>
 }
 
