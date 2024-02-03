@@ -6,7 +6,15 @@ import Accordion from './Accordion.jsx'
 import '../App.css'
 import {useState} from 'react'
 
-
+const fags=[
+  {
+    title:"Hello",
+    text:"This is a text from a villain"
+  },
+  {
+    title:"How long do we do this?",
+    text: "In previous times not much has been changed"
+  }]
 
 
 function App() {
@@ -39,7 +47,7 @@ function App() {
   return (
     <div className='app'>
       <Logo/>
-      <Accordion/>
+      <Accordion data={fags}/>
       <Form onAddItems={handleAddItems}/>
       <List items={items} onClearList={handleClearList} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem}/>
       <Stats items={items}/>
