@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Item.jsx'
+import Item from './Item.jsx'
 
 function List({items, onDeleteItem, onToggleItem, onClearList}){
   const [sortBy, setSortBy] = useState('input')
@@ -15,7 +15,7 @@ function List({items, onDeleteItem, onToggleItem, onClearList}){
   return (
     <div className='list'>
       <ul>
-        {sorteditems.map((item) => (
+        {sortedItems.map((item) => (
           <Item item={item} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} key={item.id} />
         ))}
       </ul>

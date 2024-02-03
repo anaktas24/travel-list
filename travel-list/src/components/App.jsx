@@ -1,10 +1,9 @@
 
-import './Logo.jsx'
-import './Form.jsx'
-import './List.jsx'
-import './Item.jsx'
-import './Stats.jsx'
-import './App.css'
+import Logo  from "./Logo.jsx"
+import Form from "./Form.jsx"
+import List from './List.jsx'
+import Stats from './Stats.jsx'
+import '../App.css'
 import {useState} from 'react'
 
 
