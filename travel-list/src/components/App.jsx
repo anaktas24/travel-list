@@ -1,8 +1,8 @@
-
 import Logo  from "./Logo.jsx"
 import Form from "./Form.jsx"
 import List from './List.jsx'
 import Stats from './Stats.jsx'
+import Accordion from './Accordion.jsx'
 import '../App.css'
 import {useState} from 'react'
 
@@ -39,6 +39,7 @@ function App() {
   return (
     <div className='app'>
       <Logo/>
+      <Accordion/>
       <Form onAddItems={handleAddItems}/>
       <List items={items} onClearList={handleClearList} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem}/>
       <Stats items={items}/>
