@@ -71,7 +71,7 @@ body {
   border-top: 4px solid #0f0d58;
 }
 .open .number,
-.open .text{
+.open .title{
   color: #227aad;
 }
 .app {
