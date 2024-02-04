@@ -1,4 +1,5 @@
 import Logo  from "./Logo.jsx"
+import About from "./About.jsx"
 import Form from "./Form.jsx"
 import List from './List.jsx'
 import Stats from './Stats.jsx'
@@ -49,6 +50,7 @@ function App() {
     <div className='app'>
       <Logo/>
       <Accordion data={fags}/>
+      <About/>
       <Form onAddItems={handleAddItems}/>
       <List items={items} onClearList={handleClearList} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem}/>
       <Stats items={items}/>
