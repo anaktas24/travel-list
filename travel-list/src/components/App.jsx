@@ -11,6 +11,7 @@ const fags=[
     title:"Hello",
     text:"This is a text from a villain"
   },
+
   {
     title:"How long do we do this?",
     text: "In previous times not much has been changed"
