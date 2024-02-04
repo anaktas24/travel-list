@@ -5,13 +5,13 @@ function Accordion({data}){
   return(
     <div className="accordion">
       {data.map((el, i) => (
-        <AccordionItem  title={el.title} text={el.text} nnum={i} key={el.title}/>))}
+        <AccordionItem  title={el.title} text={el.description} nnum={i} key={el.title}/>))}
     </div>
   )
 
 }
 
-function AccordionItem({num, title, text}){
+function AccordionItem({num, title, description}){
   const [isOpen, setIsOpen] = useState(false)
   function handleToggle(){
     setIsOpen((isOpen)=> !isOpen)
@@ -22,11 +22,11 @@ function AccordionItem({num, title, text}){
       <p className="title">{title}</p>
       <p className="icon">{isOpen ? "-" : "+"}</p>
       {isOpen &&
-        <div className="content-box">{text}
+        <div className="content-box">
+          {description}
         </div>}
     </div>
   )
-
 }
 
 export default Accordion
