@@ -9,13 +9,13 @@ import {useState} from 'react'
 
 const fags=[
   {
-    title:"Hello",
-    text:"This is a text from a villain"
+    title:"Hello There",
+    description:"This is a text from a villain"
   },
 
   {
     title:"How long do we do this?",
-    text: "In previous times not much has been changed"
+    description: "In previous times not much has been changed"
   }]
 
 

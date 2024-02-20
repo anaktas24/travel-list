@@ -2,19 +2,27 @@ import { useState } from "react"
 
 
 function Accordion({data}){
+  const [curOpen, setCurOpen] = useState(null)
   return(
     <div className="accordion">
       {data.map((el, i) => (
-        <AccordionItem  title={el.title} text={el.description} nnum={i} key={el.title}/>))}
+        <AccordionItem
+          curOpen = {curOpen}
+          onOpen = {setCurOpen}
+          title={el.title}
+          description={el.description}
+          num={i}
+          key={el.title}/>))}
     </div>
   )
 
 }
 
-function AccordionItem({num, title, description}){
-  const [isOpen, setIsOpen] = useState(false)
+function AccordionItem({num, title, description, curOpen, onOpen}){
+  const isOpen = num ===curOpen
+
   function handleToggle(){
-    setIsOpen((isOpen)=> !isOpen)
+    onOpen(num)
   }
   return(
     <div className={`item ${isOpen ? "open" : ""}`} onClick={handleToggle}>
